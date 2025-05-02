@@ -1,19 +1,28 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { type ReactNode } from 'react';
-import { SiReact } from 'react-icons/si';
 import { RiHomeOfficeFill } from 'react-icons/ri';
 import { Link } from '@tanstack/react-router';
+import { MdGradient } from 'react-icons/md';
+import { BsGithub } from 'react-icons/bs';
 
 export const SideNav = () => {
   return (
-    <nav className="h-full w-fit bg-stone-950 p-4 flex flex-col items-center gap-2">
-      <img src="/hikarifire.png" width={40} alt="hikari" />
-      <NavItem to="/">
-        <RiHomeOfficeFill />
-      </NavItem>
-      <NavItem to="/morph-gradient">
-        <SiReact />
-      </NavItem>
+    <nav className="h-full w-fit bg-stone-950 p-4 flex flex-col items-center justify-between gap-2">
+      <div className="w-full flex flex-col items-center gap-4">
+        <img src="/hikarifire.png" width={40} alt="hikari" />
+        <NavItem to="/">
+          <RiHomeOfficeFill />
+        </NavItem>
+        <NavItem to="/morph-gradient">
+          <MdGradient />
+        </NavItem>
+      </div>
+      <div></div>
+      <div className="w-full flex flex-col items-center gap-4">
+        <NavItem to="https://github.com/dragonspark-tech/hikari">
+          <BsGithub />
+        </NavItem>
+      </div>
     </nav>
   );
 };
